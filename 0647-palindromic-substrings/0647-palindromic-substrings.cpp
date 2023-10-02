@@ -1,32 +1,46 @@
-class Solution {   
+class Solution {
 public:
-    
-    bool isPallindrome(string &temp,int s, int e)
-    {
-        while(s<=e)
-        {
-            if(temp[s++]!=temp[e--])
-            return false;
-        }
-        return true;
-    }
-
     int countSubstrings(string s) {
-        int cnt = 0;
-
-        for(int i=0;i<s.size();i++)
+        
+        int count = 0;
+        for(int k=0;k<s.size();k++)
         {
-            for(int j=i;j<s.size();j++)
+            int i=k;
+            int j=k;
+            while(i>=0 && j<=s.size()-1)
             {
-                if(isPallindrome(s,i,j))
-                {
-                    cnt++;
-                }
+                if(s[i] == s[j])
+            {
+                count++;
+                j++;
+                i--;
             }
+            else{
+                break;
+            }
+            }
+            
         }
 
-        
+         for(int k=0;k<s.size();k++)
+        {
+            int i=k;
+            int j=i+1;
+            while(i>=0 && j<=s.size()-1)
+            {
+                if(s[i] == s[j])
+            {
+                count++;
+                j++;
+                i--;
+            }
+            else{
+                break;
+            }
+            }
+            
+        }
 
-        return cnt;
+        return count;
     }
 };
