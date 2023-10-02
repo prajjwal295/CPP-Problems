@@ -1,39 +1,30 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
+        if(s.size()!=t.size())
+        return false;
         
-        int mapping[300] = {0};
-        
-        
-        //uss string ka ek frequency table bana rahe 
-        //frequency table mei har character kitni baar repeat hua voh batate hai 
-        for(int i = 0 ; i < s.length() ; i++)
+        long long n=s.size();
+        cout<<n;
+        vector<int> hash(300, 0);
+        for( long long i=0;i<n;i++)
         {
-            //the s[i] is a character it will be explicity typecasted to integer
-            mapping[s[i]]++ ;
-            //characters value get incremented by one
+            hash[s[i]]++;
         }
-        
-        
-        //decrememt karte rahenge values ko 
-        //agar strings anagram hai toh unki character ki mapping same hogi
-        //aur mapping mei joh values store hai voh bhi same hongi 
-        for(int j = 0 ; j < t.length() ; j++)
+
+        for( long long i=0;i<n;i++){
+
+              if( hash[t[i]]>0)
+                 hash[t[i]]--;
+                 else return false;
+             }
+
+        for( long long i=0;i<300;i++)
         {
-            mapping[t[j]]-- ;
+            if(hash[i]!=0)
+            return false;
         }
-        
-        
-        // then checking all the elements of the mapping array
-        // if the strings are anagram then no mapping value will be left at the end
-        for(int k = 0 ; k < 300 ; k++)
-        {
-            if(mapping[k] != 0)
-            {
-                return false ;
-            }
-        }
-        
-        return true ;
+
+        return true;
     }
 };
