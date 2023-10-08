@@ -11,7 +11,6 @@ public:
         int i=0;
             while(j<s.size())
             {
-                 cout << "i: " << i << " j: " << j << " TopToBottom: " << TopToBottom << endl; // Debugging statement
                 str[i].push_back(s[j]);
                 if(i==rows-1)
                 {
