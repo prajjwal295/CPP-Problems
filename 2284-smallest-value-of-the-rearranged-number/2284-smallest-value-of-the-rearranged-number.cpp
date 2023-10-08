@@ -37,11 +37,6 @@ public:
             
             swap(temp[i],temp[0]);
 
-                for(int i=0.;i<temp.size();i++)
-        {
-          cout<<temp[i]<<endl;
-        }
-
             for(int i=0;i<temp.size();i++)
             {
                 ans = ans*10 + (temp[i]-'0');
