@@ -1,34 +1,34 @@
 class Solution {
 public:
     string customSortString(string order, string s) {
-        string ans="";
-       map<char , int> hash;
+        
+        map<char , int> mp;
+        string ans;
+
         for(int i=0;i<s.size();i++)
         {
-           hash[s[i]]++;
+            mp[s[i]]++;
         }
 
-
-        for(auto itr : order)
+        for(auto itr: order)
         {
-            if(hash.find(itr)!=hash.end())
+            if(mp.find(itr)!=mp.end())
             {
-                auto temp = hash.find(itr);
-                int cnt = temp->second;
-                string q(cnt , temp->first);
-                ans+=q;
-                hash.erase(itr);
+                auto x = mp.find(itr);
+                auto cnt = x->second;
+                 string q(cnt , x->first);
+            ans+=q;
+                mp.erase(itr);
             }
         }
 
-         for(auto itr : hash)
-         {
-             string q(itr.second , itr.first);
-              ans+=q;
-         }
-
+        for(auto itr=mp.begin();itr!=mp.end();itr++)
+        {
+          
+                string q(itr->second , itr->first);
+            ans+=q;
+        }
 
         return ans;
-
     }
 };
