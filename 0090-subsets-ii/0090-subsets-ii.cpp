@@ -11,16 +11,11 @@ public:
        return true;
     }
 
-    void solve(int i ,vector<int>&nums  ,vector<int>&temp, vector<vector<int>>&ans)
+    void solve(int i ,vector<int>&nums  ,vector<int>&temp, set<vector<int>>&ans)
     {
         if(i == nums.size())
         {
-            vector<int>q;
-            for(int i=0;i<temp.size();i++)
-            q.push_back(temp[i]);
-            sort(q.begin(),q.end());
-            if(check(q , ans))
-            ans.push_back(q);
+            ans.insert(temp);
             return ;
         }
 
@@ -34,11 +29,15 @@ public:
     }
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         
-        vector<vector<int>> ans;
+        set<vector<int>> ans;
+        vector<vector<int>>t;
         vector<int>temp;
-
+        sort(nums.begin(),nums.end());
         solve(0 , nums, temp, ans);
 
-        return ans;
+        for(auto it:ans)
+        t.push_back(it);
+
+        return t;
     }
 };
