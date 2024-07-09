@@ -15,16 +15,10 @@ public:
 
             if(mp.find((sum-k))!=mp.end())
             {
-                cout<<sum<<endl;
                cnt+=mp[sum-k];
             }
 
                 mp[sum]++;
-        }
-
-        for(auto it:mp)
-        {
-            cout<<it.first<<" "<<it.second<<endl;
         }
 
         return cnt;
