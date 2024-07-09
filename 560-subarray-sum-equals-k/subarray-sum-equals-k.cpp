@@ -13,10 +13,10 @@ public:
         {
             sum+=it;
 
-            if(mp.find((sum-k))!=mp.end())
-            {
+            // if(mp.find((sum-k))!=mp.end())
+            // {
                cnt+=mp[sum-k];
-            }
+            // }
 
                 mp[sum]++;
         }
