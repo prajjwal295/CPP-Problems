@@ -1,36 +1,44 @@
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& arr) {
-        
-    vector<vector<int>> ans;
-    sort(arr.begin(), arr.end());
-    int n = arr.size();
-    for (int i = 0; i < n; i++) {
-        //remove duplicates:
-        if (i != 0 && arr[i] == arr[i - 1]) continue;
+    vector<vector<int>> threeSum(vector<int>& nums) {
 
-        //moving 2 pointers:
-        int j = i + 1;
-        int k = n - 1;
-        while (j < k) {
-            int sum = arr[i] + arr[j] + arr[k];
-            if (sum < 0) {
-                j++;
-            }
-            else if (sum > 0) {
-                k--;
-            }
-            else {
-                vector<int> temp = {arr[i], arr[j], arr[k]};
-                ans.push_back(temp);
-                j++;
-                k--;
-                //skip the duplicates:
-                while (j < k && arr[j] == arr[j - 1]) j++;
-                while (j < k && arr[k] == arr[k + 1]) k--;
+        vector<vector<int>>ans;
+
+        sort(nums.begin(),nums.end());
+        
+        for(int i = 0;i<nums.size();i++)
+        {
+            if(i!=0 && nums[i]==nums[i-1])continue;
+            int s = i+1;
+            int e = nums.size()-1;
+
+            while(s<e)
+            {
+                int sum = nums[i]+nums[s]+nums[e];
+
+                if(sum==0)
+                {
+                    vector<int>temp;
+                    temp.push_back(nums[i]);
+                    temp.push_back(nums[s]);
+                    temp.push_back(nums[e]);
+                    ans.push_back(temp);
+                    s++;
+                    e--;
+
+                    while(s<e && nums[s]==nums[s-1])s++;
+                    while(s<e && nums[e]==nums[e+1])e--;
+                }
+                else if(sum>0)
+                {
+                    e--;
+                }
+                else{
+                    s++;
+                }
             }
         }
-    }
-    return ans;
+
+        return ans;
     }
 };
