@@ -13,7 +13,6 @@ public:
 
         for(int i=0;i<s.size();i++){
            int cur = values[s[i]];
-           cout<<cur<<endl;
            if(i+1<s.size()+1 && values[s[i]] < values[s[i+1]]){
             sum -= cur;
            }
