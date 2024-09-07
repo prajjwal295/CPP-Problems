@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        
         map<char,char>mp;
         map<char,char>m;
 
