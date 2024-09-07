@@ -11,7 +11,6 @@ public:
         {
             if(temp.size()>0){
             ans.push_back(temp);
-            cout<<temp<<endl;
         }
             temp = "";
         }
@@ -21,7 +20,6 @@ public:
     }
  if(temp.size()>0){
             ans.push_back(temp);
-            cout<<temp<<endl;
         }
         
 
