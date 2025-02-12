@@ -2,7 +2,7 @@ class Solution {
 public:
     int maximumSum(vector<int>& nums) {
         
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         int ans = -1;
         int sum = -1;
 
@@ -27,7 +27,7 @@ public:
                 mp[sumi] = max(it,mp[sumi]);
             }
 
-        ans = max(ans,sum);
+            ans = max(ans,sum);
         }
 
         return ans;
