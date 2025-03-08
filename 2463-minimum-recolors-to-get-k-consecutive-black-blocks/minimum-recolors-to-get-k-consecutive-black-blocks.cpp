@@ -19,11 +19,6 @@ public:
                 mp[i] = mp[i-1] + n;
             }
         }
-
-        for(auto it:mp)
-        {
-            cout<<it<<" ";
-        }
         int ans = INT_MAX;
         int temp = 0;
         for(int i=0;i<mp.size()-k+1;i++)
