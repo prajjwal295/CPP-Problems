@@ -22,12 +22,6 @@ public:
             if(i>k)
             return true;
         }
-
-        // int j = 0;
-        // for(int i=0;i<candies.size();i++)
-        // {
-        //     if(candies[i])
-        // }
         return true;
     }
     int maximumCandies(vector<int>& candies, long long k) {
