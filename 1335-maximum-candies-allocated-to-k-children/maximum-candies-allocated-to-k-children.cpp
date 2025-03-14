@@ -25,7 +25,6 @@ public:
         return true;
     }
     int maximumCandies(vector<int>& candies, long long k) {
-        sort(candies.begin() , candies.end());
         int s = 1;
         int e = INT_MIN;
         int ans = 0;
