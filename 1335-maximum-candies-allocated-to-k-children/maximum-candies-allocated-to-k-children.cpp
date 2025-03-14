@@ -29,7 +29,7 @@ public:
         int s = 1;
         int e = INT_MIN;
         int ans = 0;
-        long sum = 0;
+      //  long sum = 0;
 
         for(auto it:candies)
         {
@@ -37,10 +37,10 @@ public:
             {
                 e = it;
             }
-            sum+=it;
+           /// sum+=it;
         }
-        if(k>sum)
-        return 0;
+        // if(k>sum)
+        // return 0;
 
         while(s<=e){
          
