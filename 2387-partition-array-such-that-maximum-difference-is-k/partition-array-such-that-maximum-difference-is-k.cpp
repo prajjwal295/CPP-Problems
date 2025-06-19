@@ -20,9 +20,6 @@ public:
             }
             mini = min(it,mini);
         }
-        cout<<mini;
-
-
         return count;
     }
 };
